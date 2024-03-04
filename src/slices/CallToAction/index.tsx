@@ -2,7 +2,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps, JSXMapSerializer, PrismicRichText } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
-import Button from "@/components/Button";
+// import Button from "@/components/Button";
 
 const components: JSXMapSerializer = {
     heading2: ({children})=>(
@@ -35,9 +35,9 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
         rounded-lg bg-gradient-to-tr from-cyan-50 via-white to-emerald-50">
             <PrismicRichText field={slice.primary.heading} components={components} />
             <PrismicRichText field={slice.primary.body} components={components}/>
-            <Button field={slice.primary.button_link}>
+            {/* <Button field={slice.primary.button_link}>
                 {slice.primary.button_text}
-            </Button>
+            </Button> */}
         </div>
 
         

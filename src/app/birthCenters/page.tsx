@@ -3,25 +3,17 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import Button from "@/components/Button";
-import Link from "next/link";
 
 export default async function Page() {
   const client = createClient();
-  const page = await client.getSingle("homepage");
+  const page = await client.getSingle("birth_centers");
 
-  return <div className={"flex flex-col items-center"}>
-    <SliceZone slices={page.data.slices} components={components} />
-    <Link href="/birthplace_options">
-    <Button>Next</Button>
-    </Link>
-  </div>
-  
+  return <SliceZone slices={page.data.slices} components={components} />;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const page = await client.getSingle("homepage");
+  const page = await client.getSingle("birth_centers");
 
   return {
     title: page.data.meta_title,

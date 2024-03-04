@@ -1,17 +1,24 @@
-import clsx from 'clsx'
-import { PrismicNextLink,PrismicNextLinkProps } from '@prismicio/next'
+import React from 'react';
+import clsx from 'clsx';
 
-export default function Button({
-    className,
-    ...restProps
-}: PrismicNextLinkProps) {
+// Define the ButtonProps type, extending the standard button properties
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    className?: string;
+    children: React.ReactNode;
+};
+
+const Button: React.FC<ButtonProps> = ({ children, className, ...restProps }) => {
+    // Combine additional className props with the default Tailwind styles
+    const buttonClassName = clsx(
+        "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1",
+        className
+    );
 
     return (
-        <PrismicNextLink 
-        
-        className={clsx("block w-fit bg-cyan-700 hover:bg-cyan-800 transition-color duration-200 ease-in-out py-3 px-12 rounded-full font-display text-white font-bold text-base tracking-wider", className)}
-        
-        {...restProps}
-        />
-    )
-}
+        <button className={buttonClassName} {...restProps}>
+            {children}
+        </button>
+    );
+};
+
+export default Button;

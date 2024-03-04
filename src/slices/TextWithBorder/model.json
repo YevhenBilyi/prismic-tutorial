@@ -1,0 +1,28 @@
+{
+  "id": "text_with_border",
+  "type": "SharedSlice",
+  "name": "TextWithBorder",
+  "description": "TextWithBorder",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "textwihborder": {
+          "type": "StructuredText",
+          "config": {
+            "label": "TextWihBorder",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

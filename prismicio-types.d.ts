@@ -4,6 +4,219 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type BirthCentersDocumentDataSlicesSlice =
+  | HeroSlice
+  | TextWithImageSlice
+  | TwoImagesSlice
+  | TestimonialsSlice
+  | TextWithBorderSlice
+  | TextSlice;
+
+/**
+ * Content for Birth Centers documents
+ */
+interface BirthCentersDocumentData {
+  /**
+   * Slice Zone field in *Birth Centers*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: birth_centers.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BirthCentersDocumentDataSlicesSlice> /**
+   * Meta Description field in *Birth Centers*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: birth_centers.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Birth Centers*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: birth_centers.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Birth Centers*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: birth_centers.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Birth Centers document from Prismic
+ *
+ * - **API ID**: `birth_centers`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BirthCentersDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<BirthCentersDocumentData>,
+    "birth_centers",
+    Lang
+  >;
+
+type BirthplaceOptionsDocumentDataSlicesSlice =
+  | TextSlice
+  | TextWithBorderSlice
+  | TwoImagesSlice
+  | TextWithImageSlice
+  | HeroSlice;
+
+/**
+ * Content for Birthplace Options documents
+ */
+interface BirthplaceOptionsDocumentData {
+  /**
+   * Slice Zone field in *Birthplace Options*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: birthplace_options.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BirthplaceOptionsDocumentDataSlicesSlice> /**
+   * Meta Description field in *Birthplace Options*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: birthplace_options.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Birthplace Options*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: birthplace_options.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Birthplace Options*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: birthplace_options.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Birthplace Options document from Prismic
+ *
+ * - **API ID**: `birthplace_options`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BirthplaceOptionsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<BirthplaceOptionsDocumentData>,
+    "birthplace_options",
+    Lang
+  >;
+
+type HomeBirthsDocumentDataSlicesSlice =
+  | HeroSlice
+  | TextWithImageSlice
+  | TwoImagesSlice
+  | FeaturesSlice
+  | TestimonialsSlice
+  | TextWithBorderSlice
+  | TextSlice;
+
+/**
+ * Content for Home Births documents
+ */
+interface HomeBirthsDocumentData {
+  /**
+   * Slice Zone field in *Home Births*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_births.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomeBirthsDocumentDataSlicesSlice> /**
+   * Meta Description field in *Home Births*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: home_births.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Home Births*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_births.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Home Births*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: home_births.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Home Births document from Prismic
+ *
+ * - **API ID**: `home_births`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomeBirthsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HomeBirthsDocumentData>,
+    "home_births",
+    Lang
+  >;
+
 type HomepageDocumentDataSlicesSlice =
   | CallToActionSlice
   | TextWithImageSlice
@@ -85,6 +298,78 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type HospitalBirthsDocumentDataSlicesSlice =
+  | HeroSlice
+  | TextWithImageSlice
+  | TwoImagesSlice
+  | FeaturesSlice
+  | TestimonialsSlice
+  | TextWithBorderSlice
+  | TextSlice;
+
+/**
+ * Content for Hospital Births documents
+ */
+interface HospitalBirthsDocumentData {
+  /**
+   * Slice Zone field in *Hospital Births*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hospital_births.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HospitalBirthsDocumentDataSlicesSlice> /**
+   * Meta Description field in *Hospital Births*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: hospital_births.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Hospital Births*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hospital_births.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Hospital Births*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: hospital_births.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Hospital Births document from Prismic
+ *
+ * - **API ID**: `hospital_births`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HospitalBirthsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HospitalBirthsDocumentData>,
+    "hospital_births",
+    Lang
+  >;
+
 /**
  * Item in *Settings → Navigation*
  */
@@ -157,6 +442,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   navigation: prismic.GroupField<Simplify<SettingsDocumentDataNavigationItem>>;
+
+  /**
+   * Footer field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.footer
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  footer: prismic.KeyTextField;
 }
 
 /**
@@ -241,7 +537,11 @@ export type TestimonialDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | BirthCentersDocument
+  | BirthplaceOptionsDocument
+  | HomeBirthsDocument
   | HomepageDocument
+  | HospitalBirthsDocument
   | SettingsDocument
   | TestimonialDocument;
 
@@ -611,6 +911,93 @@ export type TestimonialsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Text → Primary*
+ */
+export interface TextSliceDefaultPrimary {
+  /**
+   * text field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Text Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Text*
+ */
+type TextSliceVariation = TextSliceDefault;
+
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `text`
+ * - **Description**: Text
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextSlice = prismic.SharedSlice<"text", TextSliceVariation>;
+
+/**
+ * Primary content in *TextWithBorder → Primary*
+ */
+export interface TextWithBorderSliceDefaultPrimary {
+  /**
+   * TextWihBorder field in *TextWithBorder → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_with_border.primary.textwihborder
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  textwihborder: prismic.RichTextField;
+}
+
+/**
+ * Default variation for TextWithBorder Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextWithBorderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TextWithBorderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TextWithBorder*
+ */
+type TextWithBorderSliceVariation = TextWithBorderSliceDefault;
+
+/**
+ * TextWithBorder Shared Slice
+ *
+ * - **API ID**: `text_with_border`
+ * - **Description**: TextWithBorder
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextWithBorderSlice = prismic.SharedSlice<
+  "text_with_border",
+  TextWithBorderSliceVariation
+>;
+
+/**
  * Primary content in *TextWithImage → Primary*
  */
 export interface TextWithImageSliceDefaultPrimary {
@@ -725,6 +1112,61 @@ export type TextWithImageSlice = prismic.SharedSlice<
   TextWithImageSliceVariation
 >;
 
+/**
+ * Primary content in *TwoImages → Primary*
+ */
+export interface TwoImagesSliceDefaultPrimary {
+  /**
+   * ImageLeft field in *TwoImages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_images.primary.imageleft
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageleft: prismic.ImageField<never>;
+
+  /**
+   * ImageRight field in *TwoImages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_images.primary.imageright
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imageright: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for TwoImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TwoImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TwoImagesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TwoImages*
+ */
+type TwoImagesSliceVariation = TwoImagesSliceDefault;
+
+/**
+ * TwoImages Shared Slice
+ *
+ * - **API ID**: `two_images`
+ * - **Description**: TwoImages
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TwoImagesSlice = prismic.SharedSlice<
+  "two_images",
+  TwoImagesSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -735,9 +1177,21 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      BirthCentersDocument,
+      BirthCentersDocumentData,
+      BirthCentersDocumentDataSlicesSlice,
+      BirthplaceOptionsDocument,
+      BirthplaceOptionsDocumentData,
+      BirthplaceOptionsDocumentDataSlicesSlice,
+      HomeBirthsDocument,
+      HomeBirthsDocumentData,
+      HomeBirthsDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      HospitalBirthsDocument,
+      HospitalBirthsDocumentData,
+      HospitalBirthsDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
@@ -764,12 +1218,24 @@ declare module "@prismicio/client" {
       TestimonialsSliceDefaultItem,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
+      TextSlice,
+      TextSliceDefaultPrimary,
+      TextSliceVariation,
+      TextSliceDefault,
+      TextWithBorderSlice,
+      TextWithBorderSliceDefaultPrimary,
+      TextWithBorderSliceVariation,
+      TextWithBorderSliceDefault,
       TextWithImageSlice,
       TextWithImageSliceDefaultPrimary,
       TextWithImageSliceImageRightPrimary,
       TextWithImageSliceVariation,
       TextWithImageSliceDefault,
       TextWithImageSliceImageRight,
+      TwoImagesSlice,
+      TwoImagesSliceDefaultPrimary,
+      TwoImagesSliceVariation,
+      TwoImagesSliceDefault,
     };
   }
 }

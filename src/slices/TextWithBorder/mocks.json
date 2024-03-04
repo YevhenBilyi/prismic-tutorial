@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"textwihborder": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laboris officia pariatur anim duis aute ullamco in enim veniam velit eiusmod voluptate sit eu."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

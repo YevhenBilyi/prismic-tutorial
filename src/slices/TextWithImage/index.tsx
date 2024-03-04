@@ -13,7 +13,7 @@ const components: JSXMapSerializer = {
         </Heading>
         ),
     paragraph: ({children})=>(
-        <p className="max-w-md text-lg font-body text-slate-600">{children}</p>
+        <p className="text-lg font-body text-slate-600">{children}</p>
         )  
 
 }
@@ -29,19 +29,23 @@ export type TextWithImageProps =
  */
 const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
   return (
-    <Bounded
+    <Bounded 
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-        <div className="grid gap-8 md:grid-cols-2 place-items-center">
-            <PrismicNextImage field={slice.primary.image}
-            className={clsx("rounded-lg",
-            slice.variation==="imageRight"&&"md:order-2")} />
-            <div className="grid gap-4">
-                <PrismicRichText field={slice.primary.heading} components={components}/>
-                <PrismicRichText field={slice.primary.body} components={components}/>
+    <div className="grid md:grid-cols-5 place-items-center gap-8">
+        <PrismicNextImage field={slice.primary.image}
+        className={clsx("rounded-lg md:col-span-2",
+        slice.variation==="imageRight"&&"md:order-2")} />
+        <div className="md:col-span-3 grid gap-4">
+            <PrismicRichText field={slice.primary.heading} components={components}/>
+            <div className="border-2 rounded-3xl p-5">
+              <PrismicRichText field={slice.primary.body} components={components}/>  
             </div>
+            
         </div>
+    </div>
+
       
 
       
