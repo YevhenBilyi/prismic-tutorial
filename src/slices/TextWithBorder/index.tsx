@@ -6,7 +6,17 @@ import Heading from "@/components/Heading";
 const components: JSXMapSerializer = {
     paragraph: ({children})=>(
         <p className="text-lg font-body text-slate-600 my-2">{children}</p>
-        )  
+        ),
+    hyperlink: ({children, node, })=>{
+        return (<a
+        href={node.data.url}
+        className="text-lg font-body text-blue-600 hover:text-blue-800 visited:text-purple-600 my-4"
+        target='_blank'
+        rel="noopener noreferrer"
+        >
+            {children}
+        </a>)
+    }
 
 }
 
