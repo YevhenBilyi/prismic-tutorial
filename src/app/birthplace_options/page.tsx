@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { Metadata } from "next";
 import { SliceZone } from "@prismicio/react";
@@ -10,23 +10,23 @@ import useStore from "../../../store/store";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function Page() {
+export default function Page(){
   const [page, setPage] = useState(null);
   const setInitialPage = useStore(state => state.setInitialPage);
-  useEffect(()=>
-  {
+useEffect(()=>
+{
     async function fetchData(){
-        let client = createClient();
-        let pageFetched = await client.getSingle("birthplace_options");
-        setPage(pageFetched);
+            let client = createClient();
+            let pageFetched = await client.getSingle("birthplace_options");
+            setPage(pageFetched);
     }
     fetchData();
-  },[])
+},[])
   if(page){
     return (
       <div>
         <SliceZone slices={page.data.slices} components={components} />
-        <div className={"flex items-center justify-center space-x-4 pb-10"}>
+        <div className={"flex items-center justify-center space-x-4 p-10"}>
             <Button onClick={()=>setInitialPage("birthCenters")}>
                 <Link href="/birthCenters">
                     Fæðingarheimili
@@ -48,6 +48,9 @@ export default function Page() {
   }
 return null;
 }
+
+
+
 //   return ({page? (<div>
 //     <SliceZone slices={page.data.slices} components={components} />;
 //     <div className={"flex items-center justify-center space-x-4 pb-10"}>
@@ -80,3 +83,4 @@ return null;
 //     description: page.data.meta_description,
 //   };
 // }
+

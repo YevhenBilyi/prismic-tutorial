@@ -1,0 +1,92 @@
+{
+  "id": "table",
+  "type": "SharedSlice",
+  "name": "Table",
+  "description": "Table",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title1": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title1",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "title2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title2",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "title3": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title3",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        },
+        "title4": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title4",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading3"
+          }
+        }
+      },
+      "items": {
+        "column1": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Column1",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "hyperlink,paragraph"
+          }
+        },
+        "column2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Column2",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
+          }
+        },
+        "column3": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Column3",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
+          }
+        },
+        "column4": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Column4",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
+          }
+        }
+      }
+    }
+  ]
+}

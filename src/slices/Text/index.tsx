@@ -7,9 +7,18 @@ const components: JSXMapSerializer = {
         <h4 className="text-3xl font-bold text-slate-900">{children}</h4>
         ),
     paragraph: ({children})=>(
-        <p className="text-lg font-body text-slate-600 ">{children}</p>
-        )  
-
+        <p className="text-lg font-body text-slate-600 my-4">{children}</p>
+        ),
+    hyperlink: ({children, node, })=>{
+        return (<a
+        href={node.data.url}
+        className="text-lg font-body text-blue-600 hover:text-blue-800 visited:text-purple-600 my-4"
+        target='_blank'
+        rel="noopener noreferrer"
+        >
+            {children}
+        </a>)
+    }
 }
 
 /**
@@ -22,7 +31,7 @@ export type TextProps = SliceComponentProps<Content.TextSlice>;
  */
 const Text = ({ slice }: TextProps): JSX.Element => {
   return (
-    <Bounded className="p-5 text-center"
+    <Bounded className="mt-5 text-center"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >

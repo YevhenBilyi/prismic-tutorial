@@ -13,7 +13,9 @@ export default async function Home() {
     return <Bounded as="header" className="py-4 md:py-6 lg-py-8"> 
             <div className="flex gap-4 items-center justify-between sm:flex-row flex-col">
                 <Link href={"/"}>
-                    <Logo />
+                <div style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <Logo />
+        </div>
                     </Link>
                 <nav>
                     <ul className="flex">

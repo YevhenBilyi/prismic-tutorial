@@ -1,0 +1,115 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Trace"
+						}
+					}
+				]
+			},
+			"title2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Triangle"
+						}
+					}
+				]
+			},
+			"title3": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Driven"
+						}
+					}
+				]
+			},
+			"title4": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Importance"
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"column1",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Excepteur proident nisi ullamco ex elit proident culpa incididunt consequat. Occaecat commodo cillum id proident. Nulla mollit non cupidatat ut consequat Lorem labore duis Lorem fugiat aliqua."
+									}
+								}
+							]
+						}
+					],
+					[
+						"column2",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Quis aliquip enim ea."
+									}
+								}
+							]
+						}
+					],
+					[
+						"column3",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ea aliquip commodo incididunt ipsum amet aliqua ea duis. Deserunt tempor est nisi laboris velit aliqua magna."
+									}
+								}
+							]
+						}
+					],
+					[
+						"column4",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ea minim est ipsum officia voluptate duis voluptate. Aliquip incididunt minim et pariatur."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

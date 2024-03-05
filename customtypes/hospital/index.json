@@ -1,29 +1,29 @@
 {
   "format": "page",
-  "id": "hospital_births",
-  "label": "Hospital Births",
-  "repeatable": false,
+  "id": "hospital",
+  "label": "Hospital",
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "table": {
-              "type": "SharedSlice"
-            },
             "hero": {
-              "type": "SharedSlice"
-            },
-            "text_with_image": {
               "type": "SharedSlice"
             },
             "two_images": {
               "type": "SharedSlice"
             },
-            "features": {
+            "text_with_image": {
               "type": "SharedSlice"
             },
             "testimonials": {

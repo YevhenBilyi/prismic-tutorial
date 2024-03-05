@@ -5,7 +5,7 @@ import Heading from "@/components/Heading";
 
 const components: JSXMapSerializer = {
     paragraph: ({children})=>(
-        <p className="text-lg font-body text-slate-600 border-2 rounded-3xl p-5 ">{children}</p>
+        <p className="text-lg font-body text-slate-600 my-2">{children}</p>
         )  
 
 }
@@ -21,11 +21,13 @@ export type TextWithBorderProps =
  */
 const TextWithBorder = ({ slice }: TextWithBorderProps): JSX.Element => {
   return (
-    <Bounded
+    <Bounded 
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
+        <div className={"border-2 rounded-3xl p-5"}>
             <PrismicRichText field={slice.primary.textwihborder} components={components}/>
+        </div>
 
       
     </Bounded>

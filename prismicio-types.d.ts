@@ -298,7 +298,79 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type HospitalDocumentDataSlicesSlice =
+  | HeroSlice
+  | TwoImagesSlice
+  | TextWithImageSlice
+  | TestimonialsSlice
+  | TextWithBorderSlice
+  | TextSlice;
+
+/**
+ * Content for Hospital documents
+ */
+interface HospitalDocumentData {
+  /**
+   * Slice Zone field in *Hospital*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hospital.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HospitalDocumentDataSlicesSlice> /**
+   * Meta Description field in *Hospital*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: hospital.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Hospital*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hospital.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Hospital*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: hospital.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Hospital document from Prismic
+ *
+ * - **API ID**: `hospital`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HospitalDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<HospitalDocumentData>,
+    "hospital",
+    Lang
+  >;
+
 type HospitalBirthsDocumentDataSlicesSlice =
+  | TableSlice
   | HeroSlice
   | TextWithImageSlice
   | TwoImagesSlice
@@ -476,28 +548,6 @@ export type SettingsDocument<Lang extends string = string> =
  */
 interface TestimonialDocumentData {
   /**
-   * Name field in *Testimonial*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonial.name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField;
-
-  /**
-   * Job Title field in *Testimonial*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testimonial.job_title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  job_title: prismic.KeyTextField;
-
-  /**
    * Quote field in *Testimonial*
    *
    * - **Field Type**: Rich Text
@@ -509,15 +559,15 @@ interface TestimonialDocumentData {
   quote: prismic.RichTextField;
 
   /**
-   * Avatar field in *Testimonial*
+   * Heading field in *Testimonial*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonial.avatar
+   * - **API ID Path**: testimonial.heading
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  avatar: prismic.ImageField<never>;
+  heading: prismic.RichTextField;
 }
 
 /**
@@ -541,6 +591,7 @@ export type AllDocumentTypes =
   | BirthplaceOptionsDocument
   | HomeBirthsDocument
   | HomepageDocument
+  | HospitalDocument
   | HospitalBirthsDocument
   | SettingsDocument
   | TestimonialDocument;
@@ -851,6 +902,123 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceHorizontal;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *Table → Primary*
+ */
+export interface TableSliceDefaultPrimary {
+  /**
+   * Title1 field in *Table → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.primary.title1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title1: prismic.RichTextField;
+
+  /**
+   * Title2 field in *Table → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.primary.title2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title2: prismic.RichTextField;
+
+  /**
+   * Title3 field in *Table → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.primary.title3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title3: prismic.RichTextField;
+
+  /**
+   * Title4 field in *Table → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.primary.title4
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title4: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Table → Items*
+ */
+export interface TableSliceDefaultItem {
+  /**
+   * Column1 field in *Table → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.items[].column1
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column1: prismic.RichTextField;
+
+  /**
+   * Column2 field in *Table → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.items[].column2
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column2: prismic.RichTextField;
+
+  /**
+   * Column3 field in *Table → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.items[].column3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column3: prismic.RichTextField;
+
+  /**
+   * Column4 field in *Table → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.items[].column4
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  column4: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Table Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TableSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TableSliceDefaultPrimary>,
+  Simplify<TableSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Table*
+ */
+type TableSliceVariation = TableSliceDefault;
+
+/**
+ * Table Shared Slice
+ *
+ * - **API ID**: `table`
+ * - **Description**: Table
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TableSlice = prismic.SharedSlice<"table", TableSliceVariation>;
+
+/**
  * Primary content in *Testimonials → Primary*
  */
 export interface TestimonialsSliceDefaultPrimary {
@@ -894,9 +1062,54 @@ export type TestimonialsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Testimonials → Primary*
+ */
+export interface TestimonialsSlice2ColumnsPrimary {
+  /**
+   * Heading field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Testimonials → Items*
+ */
+export interface TestimonialsSlice2ColumnsItem {
+  /**
+   * Testimonial field in *Testimonials → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.items[].testimonial
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  testimonial: prismic.ContentRelationshipField<"testimonial">;
+}
+
+/**
+ * 2 columns variation for Testimonials Slice
+ *
+ * - **API ID**: `2Columns`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSlice2Columns = prismic.SharedSliceVariation<
+  "2Columns",
+  Simplify<TestimonialsSlice2ColumnsPrimary>,
+  Simplify<TestimonialsSlice2ColumnsItem>
+>;
+
+/**
  * Slice variation for *Testimonials*
  */
-type TestimonialsSliceVariation = TestimonialsSliceDefault;
+type TestimonialsSliceVariation =
+  | TestimonialsSliceDefault
+  | TestimonialsSlice2Columns;
 
 /**
  * Testimonials Shared Slice
@@ -1189,6 +1402,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      HospitalDocument,
+      HospitalDocumentData,
+      HospitalDocumentDataSlicesSlice,
       HospitalBirthsDocument,
       HospitalBirthsDocumentData,
       HospitalBirthsDocumentDataSlicesSlice,
@@ -1213,11 +1429,19 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceHorizontal,
+      TableSlice,
+      TableSliceDefaultPrimary,
+      TableSliceDefaultItem,
+      TableSliceVariation,
+      TableSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceDefaultPrimary,
       TestimonialsSliceDefaultItem,
+      TestimonialsSlice2ColumnsPrimary,
+      TestimonialsSlice2ColumnsItem,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
+      TestimonialsSlice2Columns,
       TextSlice,
       TextSliceDefaultPrimary,
       TextSliceVariation,

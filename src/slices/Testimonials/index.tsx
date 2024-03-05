@@ -6,6 +6,7 @@ import Heading from "@/components/Heading";
 import { createClient } from "@/prismicio";
 import test from "node:test";
 import { PrismicNextImage } from "@prismicio/next";
+import clsx from "clsx";
 
 const components: JSXMapSerializer = {
     heading2: ({children})=>(
@@ -15,7 +16,7 @@ const components: JSXMapSerializer = {
         </Heading>
     ),
     paragraph: ({children})=>(
-        <p className="text-xl md:text-2xl font-normal font-body text-slate-600 mb-8">
+        <p className="text-l md:text-l font-normal font-body text-slate-600 mb-3">
             {children}
         </p>
     )
@@ -39,24 +40,22 @@ const Testimonials = async ({ slice }: TestimonialsProps): Promise<JSX.Element> 
         return client.getByUID("testimonial", item.testimonial.uid)
     }
   }))
+
+  
+  
   return (
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       <PrismicRichText components={components} field={slice.primary.heading} />
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+      <div className={clsx("grid grid-cols-1 gap-6 auto-rows-fr", slice.variation==="default"? "lg:grid-cols-3" : "lg:grid-cols-2")}>
         {testimonials.map((item,index)=>item&&(
-            <div key={index} className="border bg-white shadow-lg rounded-lg px-8
-             md:px-14 py-10 md:py-16 grid content-between ">
-                <PrismicRichText field={item.data.quote} components={components} />
-                <div className="flex items-center">
-                    <PrismicNextImage width={56} height={56} field={item.data.avatar}
-                    className="rounded-full mr-4" imgixParams={{ar:"1:1", fit:"crop"}} />
-                    <div>
-                        <p className="text-base font-medium text-slate-700">{item.data.name}</p>
-                        <p className="text-base text-slate-600">{item.data.job_title}</p>
-                    </div>
+            <div key={index}>
+                <PrismicRichText field={item.data.heading} components={components} />
+                <div  className=" border bg-white shadow-lg rounded-3xl px-4
+                md:px-6 pt-5 grid content-between ">
+                    <PrismicRichText field={item.data.quote} components={components} />
                 </div>
             </div>
 
