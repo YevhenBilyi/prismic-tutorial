@@ -18,7 +18,7 @@ export default async function Page({ params }: { params: Params }) {
   return <div>
             <SliceZone slices={page.data.slices} components={components} />
             <Link href="/hospitalBirths" className={"flex items-center justify-center space-x-4 p-10"}>
-              <Button>Back</Button>
+              <Button>Til baka</Button>
             </Link>
         </div>
 }

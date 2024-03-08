@@ -27,7 +27,7 @@ export default function Home({page}:{page: any}) {
                 <SliceZone slices={page.data.slices} components={components} />
                 <div className={"flex items-center justify-center space-x-4 p-10"}>
                         <Button onClick={goToNextPage}>
-                                Next
+                        Halda áfram
                         </Button>
                 </div>
             </div>)
