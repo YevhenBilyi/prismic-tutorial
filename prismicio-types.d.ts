@@ -145,6 +145,77 @@ export type BirthplaceOptionsDocument<Lang extends string = string> =
     Lang
   >;
 
+type DecisionGuideDocumentDataSlicesSlice =
+  | TwoImagesSlice
+  | TextWithImageSlice
+  | HeroSlice
+  | TestimonialsSlice
+  | TextWithBorderSlice
+  | TextSlice;
+
+/**
+ * Content for Decision Guide documents
+ */
+interface DecisionGuideDocumentData {
+  /**
+   * Slice Zone field in *Decision Guide*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: decision_guide.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<DecisionGuideDocumentDataSlicesSlice> /**
+   * Meta Description field in *Decision Guide*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: decision_guide.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Decision Guide*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: decision_guide.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Decision Guide*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: decision_guide.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Decision Guide document from Prismic
+ *
+ * - **API ID**: `decision_guide`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DecisionGuideDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<DecisionGuideDocumentData>,
+    "decision_guide",
+    Lang
+  >;
+
 type HomeBirthsDocumentDataSlicesSlice =
   | HeroSlice
   | TextWithImageSlice
@@ -589,6 +660,7 @@ export type TestimonialDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | BirthCentersDocument
   | BirthplaceOptionsDocument
+  | DecisionGuideDocument
   | HomeBirthsDocument
   | HomepageDocument
   | HospitalDocument
@@ -1396,6 +1468,9 @@ declare module "@prismicio/client" {
       BirthplaceOptionsDocument,
       BirthplaceOptionsDocumentData,
       BirthplaceOptionsDocumentDataSlicesSlice,
+      DecisionGuideDocument,
+      DecisionGuideDocumentData,
+      DecisionGuideDocumentDataSlicesSlice,
       HomeBirthsDocument,
       HomeBirthsDocumentData,
       HomeBirthsDocumentDataSlicesSlice,
