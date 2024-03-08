@@ -41,8 +41,16 @@ const routes: prismic.ClientConfig["routes"] = [
     path: '/hospitals/:uid',
   },
   {
+    type: 'best_choice',
+    path: '/bestChoice/:uid',
+  },
+  {
     type: 'decision_guide',
     path: '/decisionGuide',
+  },
+  {
+    type: 'next_steps',
+    path: '/nextSteps',
   }
 ];
 

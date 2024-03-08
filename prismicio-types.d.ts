@@ -4,6 +4,74 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type BestChoiceDocumentDataSlicesSlice =
+  | HeroSlice
+  | TextWithBorderSlice
+  | TextSlice;
+
+/**
+ * Content for Best Choice documents
+ */
+interface BestChoiceDocumentData {
+  /**
+   * Slice Zone field in *Best Choice*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: best_choice.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<BestChoiceDocumentDataSlicesSlice> /**
+   * Meta Description field in *Best Choice*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: best_choice.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Best Choice*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: best_choice.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Best Choice*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: best_choice.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Best Choice document from Prismic
+ *
+ * - **API ID**: `best_choice`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BestChoiceDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<BestChoiceDocumentData>,
+    "best_choice",
+    Lang
+  >;
+
 type BirthCentersDocumentDataSlicesSlice =
   | HeroSlice
   | TextWithImageSlice
@@ -513,6 +581,76 @@ export type HospitalBirthsDocument<Lang extends string = string> =
     Lang
   >;
 
+type NextStepsDocumentDataSlicesSlice =
+  | HeroSlice
+  | TextWithImageSlice
+  | TwoImagesSlice
+  | TextSlice
+  | TextWithBorderSlice;
+
+/**
+ * Content for Next Steps documents
+ */
+interface NextStepsDocumentData {
+  /**
+   * Slice Zone field in *Next Steps*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: next_steps.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<NextStepsDocumentDataSlicesSlice> /**
+   * Meta Description field in *Next Steps*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: next_steps.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Next Steps*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: next_steps.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Next Steps*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: next_steps.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Next Steps document from Prismic
+ *
+ * - **API ID**: `next_steps`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NextStepsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NextStepsDocumentData>,
+    "next_steps",
+    Lang
+  >;
+
 /**
  * Item in *Settings → Navigation*
  */
@@ -658,6 +796,7 @@ export type TestimonialDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | BestChoiceDocument
   | BirthCentersDocument
   | BirthplaceOptionsDocument
   | DecisionGuideDocument
@@ -665,6 +804,7 @@ export type AllDocumentTypes =
   | HomepageDocument
   | HospitalDocument
   | HospitalBirthsDocument
+  | NextStepsDocument
   | SettingsDocument
   | TestimonialDocument;
 
@@ -1462,6 +1602,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      BestChoiceDocument,
+      BestChoiceDocumentData,
+      BestChoiceDocumentDataSlicesSlice,
       BirthCentersDocument,
       BirthCentersDocumentData,
       BirthCentersDocumentDataSlicesSlice,
@@ -1483,6 +1626,9 @@ declare module "@prismicio/client" {
       HospitalBirthsDocument,
       HospitalBirthsDocumentData,
       HospitalBirthsDocumentDataSlicesSlice,
+      NextStepsDocument,
+      NextStepsDocumentData,
+      NextStepsDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
