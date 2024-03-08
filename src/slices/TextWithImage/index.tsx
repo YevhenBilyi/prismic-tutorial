@@ -8,7 +8,7 @@ import clsx from "clsx";
 const components: JSXMapSerializer = {
     heading2: ({children})=>(
         <Heading as="h2" size="lg" 
-        className="break-words">
+        className="">
             {children}
         </Heading>
         ),
