@@ -33,8 +33,10 @@ const Table = ({ slice }: TableProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="overflow-x-auto"
     >
+        <div className="overflow-x-auto">
+
+  
         <table className={"min-w-full border-collapse"}>
         <thead>
             <tr>
@@ -57,7 +59,7 @@ const Table = ({ slice }: TableProps): JSX.Element => {
         </tbody>
 
         </table>
-        
+              </div>
     </Bounded>
   );
 };
