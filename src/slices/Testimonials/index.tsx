@@ -49,7 +49,7 @@ const Testimonials = async ({ slice }: TestimonialsProps): Promise<JSX.Element> 
       data-slice-variation={slice.variation}
     >
       <PrismicRichText components={components} field={slice.primary.heading} />
-      <div className={clsx("grid grid-cols-1 gap-6 auto-rows-fr", slice.variation==="default"? "lg:grid-cols-3" : "lg:grid-cols-2")}>
+      <div className={clsx("grid grid-cols-1 gap-6", slice.variation==="default"? "lg:grid-cols-3" : "lg:grid-cols-2")}>
         {testimonials.map((item,index)=>item&&(
             <div key={index}>
                 <PrismicRichText field={item.data.heading} components={components} />
