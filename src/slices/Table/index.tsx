@@ -35,9 +35,8 @@ const Table = ({ slice }: TableProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
         <div className="overflow-x-auto">
-  asdfafsdf
   
-        {/* <table className={"min-w-full border-collapse"}>
+        <table className={"min-w-full border-collapse"}>
         <thead>
             <tr>
                 <td className="border p-4 text-left bg-orange-200 font-medium"><PrismicRichText field={slice.primary.title1} components={components}/></td>
@@ -58,7 +57,7 @@ const Table = ({ slice }: TableProps): JSX.Element => {
             ))}
         </tbody>
 
-        </table> */}
+        </table>
               </div>
     </Bounded>
   );
