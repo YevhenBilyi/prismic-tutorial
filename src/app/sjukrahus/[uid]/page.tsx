@@ -12,18 +12,15 @@ type Params = { uid: string };
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const page = await client
-    .getByUID("best_choice", params.uid)
+    .getByUID("hospital", params.uid)
     .catch(() => notFound());
 
   return <div>
-            <SliceZone slices={page.data.slices} components={components} />;
-            <Link href="/nextSteps" className={"flex items-center justify-center space-x-4 p-10"}>
-                <Button>
-                    Halda áfram
-                </Button>
+            <SliceZone slices={page.data.slices} components={components} />
+            <Link href="/sjukrahusafaedingar" className={"flex items-center justify-center space-x-4 p-10"}>
+              <Button>Til baka</Button>
             </Link>
         </div>
-
 }
 
 export async function generateMetadata({
@@ -33,7 +30,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const client = createClient();
   const page = await client
-    .getByUID("best_choice", params.uid)
+    .getByUID("hospital", params.uid)
     .catch(() => notFound());
 
   return {
@@ -44,7 +41,7 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const client = createClient();
-  const pages = await client.getAllByType("best_choice");
+  const pages = await client.getAllByType("hospital");
 
   return pages.map((page) => {
     return { uid: page.uid };

@@ -12,7 +12,7 @@ export default async function Page() {
 
   return <div className={"flex flex-col items-center"}>
     <SliceZone slices={page.data.slices} components={components} />
-    <Link href="/birthplace_options"className={"flex items-center justify-center space-x-4 p-10"}>
+    <Link href="/faedingarstadirValkostir"className={"flex items-center justify-center space-x-4 p-10"}>
     <Button>Halda áfram</Button>
     </Link>
   </div>

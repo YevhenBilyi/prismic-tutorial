@@ -22,35 +22,35 @@ const routes: prismic.ClientConfig["routes"] = [
   },
   {
     type: 'birthplace_options', 
-    path: '/birthplace_options', 
+    path: '/faedingarstadirValkostir', 
   },
   {
     type: 'birth_centers',
-    path: '/birthCenters',
+    path: '/faedingarstodvar',
   },
   {
     type: 'home_births',
-    path: '/homeBirths',
+    path: '/heimafaedingar',
   },
   {
     type: 'hospital_births',
-    path: '/hospitalBirths',
+    path: '/sjukrahusafaedingar',
   },
   {
     type: 'hospital',
-    path: '/hospitals/:uid',
+    path: '/sjukrahus/:uid',
   },
   {
     type: 'best_choice',
-    path: '/bestChoice/:uid',
+    path: '/bestaVal/:uid',
   },
   {
     type: 'decision_guide',
-    path: '/decisionGuide',
+    path: '/akvaranaleidbeining',
   },
   {
     type: 'next_steps',
-    path: '/nextSteps',
+    path: '/naestuSkref',
   }
 ];
 

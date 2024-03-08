@@ -11,7 +11,7 @@ export default async function Home() {
     const settings = await client.getSingle("settings");
 
     return <Bounded as="header" className="py-4 md:py-6 lg-py-8"> 
-            <div className="flex gap-4 items-center justify-between sm:flex-row flex-col">
+            <div className="flex gap-4 items-center justify-between flex-row">
                 <Link href={"/"}>
                 <div style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Logo />

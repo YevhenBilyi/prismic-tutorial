@@ -16,13 +16,13 @@ export default function Home({page}:{page: any}) {
   
     const goToNextPage = () => {
         if(initialPage === "birthCenters") {
-            router.push('/homeBirths')
+            router.push('/heimafaedingar')
             }
         else if(initialPage === "homeBirths") {
-            router.push('/hospitalBirths')
+            router.push('/sjukrahusafaedingar')
         }
         else {
-            router.push('/decisionGuide')
+            router.push('/akvaranaleidbeining')
         }
       };
     return (

@@ -30,7 +30,7 @@ export default function DecisionGuide({page}:{page: any}) {
 
   const goToNextPage = (bestOption: number) => {
     setBestOption(bestOption);
-    router.push(`/bestChoice/choice${bestOption}`); // Navigate to next page with dynamic route
+    router.push(`/bestaVal/val${bestOption}`); // Navigate to next page with dynamic route
   };
 
   const handleAnswer = (answer: boolean) => {

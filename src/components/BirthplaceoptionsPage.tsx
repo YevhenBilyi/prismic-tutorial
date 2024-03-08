@@ -14,17 +14,17 @@ export default function Page({page}:{page: any}){
       <div>
         <SliceZone slices={page.data.slices} components={components} />
         <div className={"flex flex-col space-y-4 p-10 md:flex-row md:space-x-4 md:space-y-0 items-center justify-center"}>
-            <Link href="/birthCenters">
+            <Link href="/faedingarstodvar">
                 <Button onClick={()=>setInitialPage("birthCenters")}>
                     Fæðingarheimili
                 </Button>
              </Link>
-            <Link href="/homeBirths">
+            <Link href="/heimafaedingar">
                 <Button onClick={()=>setInitialPage("homeBirths")}>
                     Heimafæðing
                 </Button>
             </Link>
-            <Link href="/hospitalBirths">
+            <Link href="/sjukrahusafaedingar">
                 <Button onClick={()=>setInitialPage("hospitalBirths")}>
                     Sjúkrahús/Heilbrigðisstofnanir
                 </Button>

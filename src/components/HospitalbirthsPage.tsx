@@ -16,10 +16,10 @@ export default function Home({page}:{page: any}) {
   
     const goToNextPage = () => {
         if (initialPage === "hospitalBirths") {
-            router.push('/homeBirths')
+            router.push('/heimafaedingar')
         }
         else {
-            router.push('/decisionGuide')
+            router.push('/akvaranaleidbeining')
         }
       };
     return (
