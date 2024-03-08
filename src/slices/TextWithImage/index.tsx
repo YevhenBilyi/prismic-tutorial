@@ -8,7 +8,7 @@ import clsx from "clsx";
 const components: JSXMapSerializer = {
     heading2: ({children})=>(
         <Heading as="h2" size="lg" 
-        className="">
+        className="break-words">
             {children}
         </Heading>
         ),
@@ -45,7 +45,7 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
     >
     <div className="grid md:grid-cols-5 place-items-center gap-8">
         <PrismicNextImage field={slice.primary.image}
-        className={clsx("rounded-lg md:col-span-2 w-full max-w-full",
+        className={clsx("rounded-lg md:col-span-2",
         slice.variation==="imageRight"&&"md:order-2")} />
         <div className="md:col-span-3 grid gap-4">
             <PrismicRichText field={slice.primary.heading} components={components}/>
