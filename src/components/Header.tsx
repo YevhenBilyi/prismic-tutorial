@@ -2,7 +2,6 @@ import { createClient } from "@/prismicio"
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import Bounded from "./Bounded";
-import Logo from "./Logo";
 
 export default async function Home() {
 
