@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
         fontFamily: {
-            body: ['var(--font-nunito-sans)'],
-            display: ['var(--font-nunito)'],
+            body: ['var(--font-libre-franklin)'],
+            display: ['var(--font-cinzel)'],
         }
     },
   },

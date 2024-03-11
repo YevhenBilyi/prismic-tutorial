@@ -10,7 +10,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 const Button: React.FC<ButtonProps> = ({ children, className, ...restProps }) => {
     // Combine additional className props with the default Tailwind styles
     const buttonClassName = clsx(
-        "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1",
+        "bg-orange-100 hover:bg-orange-300 font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1",
         className
     );
 

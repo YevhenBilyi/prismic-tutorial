@@ -15,7 +15,6 @@ interface Questions {
 }
 
 const questions: Questions = {
-  1: "Áttu von á barni?",
   2: "Áttu von á þínu fyrsta barni?",
   3: "Fæddist barnið með keisara?",
   4: "Áttu von á einu barni?",
@@ -25,7 +24,7 @@ const questions: Questions = {
 
 export default function DecisionGuide({page}:{page: any}) {
   const router = useRouter();
-  const [questionNumber, setQuestionNumber] = useState<number>(1);
+  const [questionNumber, setQuestionNumber] = useState<number>(2);
   const setBestOption = useStore((state) => state.setBestOption);
 
   const goToNextPage = (bestOption: number) => {
@@ -35,15 +34,6 @@ export default function DecisionGuide({page}:{page: any}) {
 
   const handleAnswer = (answer: boolean) => {
     switch (questionNumber) {
-
-        case 1:
-            if(answer){
-                setQuestionNumber(2)
-            }
-            else{
-                goToNextPage(0)
-            }
-            break;
         case 2:
             if(answer){
                 setQuestionNumber(4)
@@ -94,11 +84,11 @@ export default function DecisionGuide({page}:{page: any}) {
         <SliceZone slices={page.data.slices} components={components} />
             <Bounded>
         <div className="max-w-4xl m-auto shadow-xl md:px-12 px-4 py-12 grid place-items-center
-        rounded-lg bg-gradient-to-tr from-cyan-50 via-white to-emerald-50">
-            <Heading as="h2" size="sm" 
-            className="font-semibold text-center mb-4">
+        rounded-lg bg-gradient-to-tr from-orange-50 via-white to-amber-50">
+            
+            <h4 className="text-2xl md:text-3xl font-bold font-body text-slate-900 leading-tight tracking-tight pb-5">
                 {questions[questionNumber]}
-            </Heading>
+            </h4>
             <div className="flex justify-center space-x-2">
                 <Button onClick={() => handleAnswer(true)}>Já</Button>
                 <Button onClick={() => handleAnswer(false)}>Nei</Button>

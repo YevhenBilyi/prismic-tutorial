@@ -10,10 +10,9 @@ import clsx from "clsx";
 
 const components: JSXMapSerializer = {
     heading2: ({children})=>(
-        <Heading as="h2" size="md"
-        className="text-center mb-9 font-semibold">
-            {children}
-        </Heading>
+            <h2 className="leading-tight tracking-tight font-body text-slate-700 text-2xl md:text-3xl mb-9 font-semibold">
+                {children}
+            </h2>
     ),
     paragraph: ({children})=>(
         <p className="text-l md:text-l font-normal font-body text-slate-600 mb-3">

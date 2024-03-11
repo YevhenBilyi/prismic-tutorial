@@ -4,7 +4,7 @@ import Bounded from "@/components/Bounded";
 
 const components: JSXMapSerializer = {
     heading3: ({children})=>(
-        <h3 className="text-3xl font-bold text-slate-900">{children}</h3>
+        <h3 className="text-3xl font-bold font-body text-slate-900">{children}</h3>
         ),
     paragraph: ({children})=>(
         <p className="text-lg font-body text-slate-600 my-4">{children}</p>

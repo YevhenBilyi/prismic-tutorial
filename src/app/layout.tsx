@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito, Nunito_Sans } from "next/font/google";
+import { Nunito, Nunito_Sans, Alkatra, Cinzel, Libre_Franklin} from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
 import { createClient, repositoryName } from "@/prismicio";
@@ -7,15 +7,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PrismicPreview } from "@prismicio/next";
 
-const nunito = Nunito({
+const cinzel = Cinzel({
     subsets: ['latin'],
-    variable: '--font-nunito',
+    variable: '--font-cinzel',
     display: 'swap',
 })
 
-const nunitoSans = Nunito({
+const libreFranklin = Libre_Franklin({
     subsets: ['latin'],
-    variable: '--font-nunito-sans',
+    variable: '--font-libre-franklin',
     display: 'swap',
 })
 
@@ -39,12 +39,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={clsx(nunito.variable, nunitoSans.variable)}>
+    <html lang="en" className={clsx(cinzel.variable, libreFranklin.variable)}>
         <body >
             <Header/>
             {children}
             <Footer/>
-            <div className="fixed bg-gradient-to-tr from-emerald-50 to-cyan-50 z-[-1] 
+            <div className="fixed bg-gradient-to-tr from-orange-50 to-amber-50 z-[-1] 
             inset-0 opacity-50"/>
             <PrismicPreview repositoryName={repositoryName} />
         </body>
