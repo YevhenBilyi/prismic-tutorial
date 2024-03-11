@@ -34,15 +34,15 @@ const Table = ({ slice }: TableProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto shadow-lg">
   
-        <table className={"min-w-full border-collapse"}>
+        <table className={"min-w-full border-collapse "}>
         <thead>
             <tr>
-                <td className="border p-4 text-left bg-orange-200 font-medium"><PrismicRichText field={slice.primary.title1} components={components}/></td>
-                <td className="border p-4 text-left bg-orange-200 font-medium"><PrismicRichText field={slice.primary.title2} components={components}/></td>
-                <td className="border p-4 text-left bg-orange-200 font-medium"><PrismicRichText field={slice.primary.title3} components={components}/></td>
-                <td className="border p-4 text-left bg-orange-200 font-medium"><PrismicRichText field={slice.primary.title4} components={components}/></td>
+                <td className="border p-4 text-left bg-orange-100 font-medium"><PrismicRichText field={slice.primary.title1} components={components}/></td>
+                <td className="border p-4 text-left bg-orange-100 font-medium"><PrismicRichText field={slice.primary.title2} components={components}/></td>
+                <td className="border p-4 text-left bg-orange-100 font-medium"><PrismicRichText field={slice.primary.title3} components={components}/></td>
+                <td className="border p-4 text-left bg-orange-100 font-medium"><PrismicRichText field={slice.primary.title4} components={components}/></td>
 
             </tr>
         </thead>

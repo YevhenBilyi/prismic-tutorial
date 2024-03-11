@@ -35,7 +35,7 @@ const TextWithBorder = ({ slice }: TextWithBorderProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-        <div className={"border-2 rounded-3xl p-5 bg-white"}>
+        <div className={"border-2 rounded-3xl p-5 bg-white shadow-lg"}>
             <PrismicRichText field={slice.primary.textwihborder} components={components}/>
         </div>
 

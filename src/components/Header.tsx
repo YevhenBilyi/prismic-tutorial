@@ -11,12 +11,12 @@ export default async function Home() {
     const settings = await client.getSingle("settings");
 
     return <Bounded as="header" className="py-4 md:py-6 lg-py-8"> 
-            <div className="flex gap-4 items-center justify-between flex-row">
+            <div className="flex flex-wrap gap-4 items-center justify-between md:flex-nowrap">
                 <Link href={"/"}>
-                    <h4 className="text-3xl font-bold font-body text-slate-900">Forsíða</h4>
+                    <p className=" font-body text-slate-900">Forsíða</p>
                 </Link>
                 <nav>
-                    <ul className="flex">
+                    <ul className="flex space-x-2 md:space-x-0 flex-wrap md:flex-nowrap">
                         {settings.data.navigation.map(({label,link}) => (
                             <li key={label}>
                                 <PrismicNextLink field={link}

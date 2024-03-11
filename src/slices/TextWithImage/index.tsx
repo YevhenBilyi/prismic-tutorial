@@ -45,11 +45,11 @@ const TextWithImage = ({ slice }: TextWithImageProps): JSX.Element => {
     >
     <div className="grid md:grid-cols-5 place-items-center gap-8">
         <PrismicNextImage field={slice.primary.image}
-        className={clsx("rounded-lg md:col-span-2",
+        className={clsx("rounded-lg md:col-span-2 shadow-2xl",
         slice.variation==="imageRight"&&"md:order-2")} />
         <div className="md:col-span-3 grid gap-4">
             <PrismicRichText field={slice.primary.heading} components={components}/>
-            <div className="border-2 rounded-3xl p-5 bg-white">
+            <div className="border-2 rounded-3xl p-5 bg-white shadow-lg">
               <PrismicRichText field={slice.primary.body} components={components}/>  
             </div>
             

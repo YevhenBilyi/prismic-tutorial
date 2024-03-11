@@ -17,11 +17,11 @@ const TwoImages = ({ slice }: TwoImagesProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-          <div className="flex justify-center items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <PrismicNextImage field={slice.primary.imageleft}
-        className={"rounded-lg "} />
-        {/* <PrismicNextImage field={slice.primary.imageright}
-        className={"rounded-lg md:col-span-2"} /> */}
+        className={"rounded-lg md:col-span-1 shadow-2xl"} />
+        <PrismicNextImage field={slice.primary.imageright}
+        className={"rounded-lg md:col-span-1 shadow-2xl"} />
         </div>
     </Bounded>
   );
