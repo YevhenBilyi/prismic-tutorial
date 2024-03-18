@@ -5,6 +5,10 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type BestChoiceDocumentDataSlicesSlice =
+  | TwoImagesSlice
+  | TextWithImageSlice
+  | TestimonialsSlice
+  | TableSlice
   | HeroSlice
   | TextWithBorderSlice
   | TextSlice;
@@ -73,6 +77,7 @@ export type BestChoiceDocument<Lang extends string = string> =
   >;
 
 type BirthCentersDocumentDataSlicesSlice =
+  | TableSlice
   | HeroSlice
   | TextWithImageSlice
   | TwoImagesSlice
@@ -144,6 +149,8 @@ export type BirthCentersDocument<Lang extends string = string> =
   >;
 
 type BirthplaceOptionsDocumentDataSlicesSlice =
+  | TestimonialsSlice
+  | TableSlice
   | TextSlice
   | TextWithBorderSlice
   | TwoImagesSlice
@@ -214,6 +221,7 @@ export type BirthplaceOptionsDocument<Lang extends string = string> =
   >;
 
 type DecisionGuideDocumentDataSlicesSlice =
+  | TableSlice
   | TwoImagesSlice
   | TextWithImageSlice
   | HeroSlice
@@ -285,6 +293,7 @@ export type DecisionGuideDocument<Lang extends string = string> =
   >;
 
 type HomeBirthsDocumentDataSlicesSlice =
+  | TableSlice
   | HeroSlice
   | TextWithImageSlice
   | TwoImagesSlice
@@ -356,6 +365,10 @@ export type HomeBirthsDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | TwoImagesSlice
+  | TextWithBorderSlice
+  | TextSlice
+  | TableSlice
   | TextWithImageSlice
   | TestimonialsSlice
   | HeroSlice;
@@ -435,6 +448,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type HospitalDocumentDataSlicesSlice =
+  | TableSlice
   | HeroSlice
   | TwoImagesSlice
   | TextWithImageSlice
@@ -578,6 +592,8 @@ export type HospitalBirthsDocument<Lang extends string = string> =
   >;
 
 type NextStepsDocumentDataSlicesSlice =
+  | TestimonialsSlice
+  | TableSlice
   | HeroSlice
   | TextWithImageSlice
   | TwoImagesSlice
