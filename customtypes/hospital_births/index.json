@@ -23,9 +23,6 @@
             "two_images": {
               "type": "SharedSlice"
             },
-            "features": {
-              "type": "SharedSlice"
-            },
             "testimonials": {
               "type": "SharedSlice"
             },
