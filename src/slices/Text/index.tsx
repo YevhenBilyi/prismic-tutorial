@@ -31,11 +31,14 @@ export type TextProps = SliceComponentProps<Content.TextSlice>;
  */
 const Text = ({ slice }: TextProps): JSX.Element => {
   return (
-    <Bounded className="mt-5 text-center"
+    <Bounded 
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicRichText field={slice.primary.text} components={components}/>
+        <div className="mt-5 text-center">
+            <PrismicRichText field={slice.primary.text} components={components}/>
+        </div>
+      
     </Bounded>
   );
 };

@@ -27,6 +27,20 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "subtitle_image_left": {
+          "type": "Text",
+          "config": {
+            "label": "SubTitle Image Left",
+            "placeholder": ""
+          }
+        },
+        "subtitle_image_right": {
+          "type": "Text",
+          "config": {
+            "label": "subtitle image right",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

@@ -26,6 +26,16 @@ export default function Home({page}:{page: any}) {
             <div>
                 <SliceZone slices={page.data.slices} components={components} />
                 <div className={"flex items-center justify-center space-x-4 p-10"}>
+                <a
+                href={"https://www.ljosmaedrafelag.is/thjonusta/heimafaedingar"}
+                target='_blank'
+                rel="noopener noreferrer"
+                > 
+                    <Button>
+                        Finna heimafæðingarljósmóður
+                    </Button>
+                </a>
+                   
                         <Button onClick={goToNextPage}>
                         Halda áfram
                         </Button>

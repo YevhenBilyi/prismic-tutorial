@@ -13,7 +13,7 @@ export default async function Page() {
   return <div>
             <SliceZone slices={page.data.slices} components={components} />;
             <Link href="/"className={"flex items-center justify-center space-x-4 p-10"}>
-            <Button>Heimasíða</Button>
+            <Button>Forsíða</Button>
             </Link>
         </div>
   

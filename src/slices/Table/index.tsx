@@ -39,20 +39,20 @@ const Table = ({ slice }: TableProps): JSX.Element => {
         <table className={"min-w-full border-collapse "}>
         <thead>
             <tr>
-                <td className="border p-4 text-left bg-orange-100 font-medium"><PrismicRichText field={slice.primary.title1} components={components}/></td>
-                <td className="border p-4 text-left bg-orange-100 font-medium"><PrismicRichText field={slice.primary.title2} components={components}/></td>
-                <td className="border p-4 text-left bg-orange-100 font-medium"><PrismicRichText field={slice.primary.title3} components={components}/></td>
-                <td className="border p-4 text-left bg-orange-100 font-medium"><PrismicRichText field={slice.primary.title4} components={components}/></td>
+                <th className="border p-4 text-left bg-orange-100 font-medium align-top"><PrismicRichText field={slice.primary.title1} components={components}/></th>
+                <th className="border p-4 text-left bg-orange-100 font-medium align-top"><PrismicRichText field={slice.primary.title2} components={components}/></th>
+                <th className="border p-4 text-left bg-orange-100 font-medium align-top"><PrismicRichText field={slice.primary.title3} components={components}/></th>
+                <th className="border p-4 text-left bg-orange-100 font-medium align-top"><PrismicRichText field={slice.primary.title4} components={components}/></th>
 
             </tr>
         </thead>
         <tbody>
             {slice.items.map((item, index) => (
                 <tr key={index} className="bg-white">
-                    <td className="border p-4 text-left">{item.column1 ?<PrismicRichText field={item.column1} components={components}/>:null}</td>
-                    <td className="border p-4 text-left">{item.column1 ?<PrismicRichText field={item.column2} components={components}/>:null}</td>
-                    <td className="border p-4 text-left">{item.column1 ?<PrismicRichText field={item.column3} components={components}/>:null}</td>
-                    <td className="border p-4 text-left">{item.column1 ?<PrismicRichText field={item.column4} components={components}/>:null}</td>
+                    <td className="border p-4 text-left align-top">{item.column1 ?<PrismicRichText field={item.column1} components={components}/>:null}</td>
+                    <td className="border p-4 text-left align-top">{item.column1 ?<PrismicRichText field={item.column2} components={components}/>:null}</td>
+                    <td className="border p-4 text-left align-top">{item.column1 ?<PrismicRichText field={item.column3} components={components}/>:null}</td>
+                    <td className="border p-4 text-left align-top">{item.column1 ?<PrismicRichText field={item.column4} components={components}/>:null}</td>
                 </tr>
             ))}
         </tbody>

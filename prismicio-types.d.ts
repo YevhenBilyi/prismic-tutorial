@@ -1462,6 +1462,26 @@ export interface TwoImagesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   imageright: prismic.ImageField<never>;
+
+  /**
+   * SubTitle Image Left field in *TwoImages → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_images.primary.subtitle_image_left
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle_image_left: prismic.KeyTextField;
+
+  /**
+   * subtitle image right field in *TwoImages → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: two_images.primary.subtitle_image_right
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle_image_right: prismic.KeyTextField;
 }
 
 /**

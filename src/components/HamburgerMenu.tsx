@@ -52,9 +52,11 @@ export default function HamburgerMenu({ settings }: { settings: any }) {
             <ul className="flex flex-col items-center p-4 bg-white shadow-md">
             {settings.data.navigation.map(({ label, link }:{label:any, link:any}) => (
                 <li key={label} className="w-full text-center">
-                <PrismicNextLink field={link} className="block p-3 font-body text-slate-900">
-                    {label}
-                </PrismicNextLink>
+                    <button onClick={() => setIsMenuOpen(false)} className="w-full text-left">
+                        <PrismicNextLink field={link} className="block p-3 font-body text-slate-900">
+                            {label}
+                        </PrismicNextLink>
+                    </button>
                 </li>
             ))}
             </ul>
