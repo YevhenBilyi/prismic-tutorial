@@ -47,3 +47,5 @@ export async function generateStaticParams() {
     return { uid: page.uid };
   });
 }
+
+export const revalidate = 10;
